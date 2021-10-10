@@ -1,0 +1,17 @@
+<div class="content" role="main">
+
+    <div *ngIf="homeClicked||aboutmeClicked; else defaultDisplay">
+        <!-- home page content -->
+        <home-page *ngIf="homeClicked"></home-page>
+
+        <!-- about me page content -->
+        <about-me *ngIf="aboutmeClicked"></about-me>
+    </div>
+
+    <ng-template #defaultDisplay>
+        <app-highlightcard
+            [title]="title">
+        </app-highlightcard>
+    </ng-template>
+
+</div>
